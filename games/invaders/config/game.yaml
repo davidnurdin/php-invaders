@@ -1,0 +1,21 @@
+# Invaders: a fixed shooter. Shoot down every wave of aliens before they land.
+game:
+  id: invaders
+  title: "INVADERS"
+  version: 1.0.0
+  description: "Shoot down the waves of aliens marching towards the ground, hide behind the shields, hit the saucer for bonus points."
+  width: 224
+  height: 256
+  scale: 3                      # desktop window = 672 x 768
+  background: [0, 0, 0]
+  start_scene: App\Scene\TitleScene
+  lang: en
+  net_url: ws://localhost:8090/ws
+  online: false
+  # browser on-screen buttons (phones): A fires, B / START pause
+  touch: { a: Space, b: Escape, start: Escape }
+  controls: "Left / Right (or A / D): move the cannon. Space: fire. Escape / P: pause."
+  # bin/jumphp test: the computer plays (endless: new game when it loses, next wave when it wins)
+  smoke:
+    scene: App\Scene\PlayScene
+    params: { demo: true }
